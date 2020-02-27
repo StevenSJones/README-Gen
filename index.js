@@ -1,8 +1,12 @@
-
 //Inquirer helps with asking end user questions, parsing, validating answers, providing errors.
 var inquirer = require("inquirer");//calling the inquire library
-
 var fs = require("fs")//calling the fs library
+
+var axios = require("axios")
+var dotenv = require("dotenv")
+var electron = require("electron")
+var open = require("open")
+var electrontohtml = require("electrontohtml")
 
 const questions = [];
 
@@ -16,7 +20,7 @@ inquirer.prompt([
     console.log(answers)
 });
 
-//readFile is the function the first param is the file path, encoding: utf8 is optional, then callback function
+//using the fs library, readFile is the function, the first param is the file path, encoding: utf8 is optional, then callback function
 fs.readFile("data.pdf", "utf8", function readFile(fileName, data) {
 if (error) {
     return console.log(error);
