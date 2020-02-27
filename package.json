@@ -1,8 +1,12 @@
 {
-  "name": "README-Gen",
+  "name": "readmegen",
   "version": "1.0.0",
   "description": "This is a README generator that dynamically creates a readme based on user input.  # Unit 09 Node.js and ES6+ Homework: Good README Generator",
   "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.0.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/StevenSJones/README-Gen/issues"
   },
-  "homepage": "https://github.com/StevenSJones/README-Gen#readme",
-  "dependencies": {
-    "inquire": "^0.4.8"
-  }
+  "homepage": "https://github.com/StevenSJones/README-Gen#readme"
 }

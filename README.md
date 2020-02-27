@@ -1,4 +1,4 @@
-# README-Gen
+# readmegen
 This is a README generator that dynamically creates a readme based on user input. 
 # Unit 09 Node.js and ES6+ Homework: Good README Generator
 
