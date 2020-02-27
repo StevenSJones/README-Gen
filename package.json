@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/StevenSJones/README-Gen/issues"
   },
-  "homepage": "https://github.com/StevenSJones/README-Gen#readme"
+  "homepage": "https://github.com/StevenSJones/README-Gen#readme",
+  "dependencies": {
+    "inquire": "^0.4.8"
+  }
 }
