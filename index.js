@@ -1,3 +1,51 @@
+
+const axios = require('axios');//Call to the axios library 
+const inquirer = require('inquirer');//calling the inquirer library that prompts the user via q's on command line
+const fs = require('fs');//creates and writes to the file 
+
+
+const questions = [
+  
+];
+// Make a request for a user with a given ID
+axios.get('https://api.github.com/users/stevensJones')
+  .then(function (response) {
+    // If successful then print to the console the data, avatar_url, 
+    console.log(response.data);
+    console.log(response.data.avatar_url);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+//create a file that is a dot mark down file
+fs.writeFileSync("readme.md", "response.data \n response.data.avatar_url" );
+
+
+
+
+
+
+
+
+
+
+
+
+/*inquirer.prompt([
+  {
+      type: "confirm",
+      name: "GitHubQ",
+      message: "Please input your GITHUB username"
+  }
+]).then(answers => {//.then function with 
+  console.log(answers)
+})
+
+
 //Inquirer helps with asking end user questions, parsing, validating answers, providing errors.
 var inquirer = require("inquirer");//calling the inquire library
 var fs = require("fs")//calling the fs library
@@ -43,4 +91,4 @@ function init() {
 }
 
 
-init();
+init();*/
