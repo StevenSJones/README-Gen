@@ -39,7 +39,7 @@ const fs = require('fs');//creates and writes to the file
 const questions = [
   {
     type: "confirm",
-    name: "dayQuestion",
+    name: "githubQuest",
     message: "Is it daytime?"
   }
 ];
@@ -57,7 +57,7 @@ axios.get('https://api.github.com/users/stevensJones')
     // handle error
     console.log(error);
   })
-// Inquierer 
+// Inquirer 
 inquirer
   .prompt(questions)
   .then(answers => {
