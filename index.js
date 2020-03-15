@@ -1,56 +1,24 @@
-const axios = require('axios');//Call to the axios library 
-const inquirer = require('inquirer');//calling the inquirer library that prompts the user via q's on command line
-const fs = require('fs');//creates and writes to the file 
-{
-  // {
-  //   login: 'StevenSJones',
-  //   id: 56704209,
-  //   node_id: 'MDQ6VXNlcjU2NzA0MjA5',
-  //   avatar_url: 'https://avatars0.githubusercontent.com/u/56704209?v=4',
-  //   gravatar_id: '',
-  //   url: 'https://api.github.com/users/StevenSJones',
-  //   html_url: 'https://github.com/StevenSJones',
-  //   followers_url: 'https://api.github.com/users/StevenSJones/followers',
-  //   following_url: 'https://api.github.com/users/StevenSJones/following{/other_user}',
-  //   gists_url: 'https://api.github.com/users/StevenSJones/gists{/gist_id}',
-  //   starred_url: 'https://api.github.com/users/StevenSJones/starred{/owner}{/repo}',
-  //   subscriptions_url: 'https://api.github.com/users/StevenSJones/subscriptions',
-  //   organizations_url: 'https://api.github.com/users/StevenSJones/orgs',
-  //   repos_url: 'https://api.github.com/users/StevenSJones/repos',
-  //   events_url: 'https://api.github.com/users/StevenSJones/events{/privacy}',
-  //   received_events_url: 'https://api.github.com/users/StevenSJones/received_events',
-  //   type: 'User',
-  //   site_admin: false,
-  //   name: 'SS Jones',
-  //   company: null,
-  //   blog: 'linkedin.com/in/steven-jones-285a33115',
-  //   location: 'Denver, CO',
-  //   email: null,
-  //   hireable: true,
-  //   bio: null,
-  //   public_repos: 12,
-  //   public_gists: 0,
-  //   followers: 1,
-  //   following: 1,
-  //   created_at: '2019-10-18T00:02:09Z',
-  //   updated_at: '2020-03-12T02:40:14Z'
-  // }
-}
-const questions = [
-  {
-    type: "confirm",
-    name: "githubQuest",
-    message: "Is it daytime?"
-  }
-];
+/*Call to the axios library provides a single API for dealing with XMLHttpRequest s and node's http interface. 
+Besides that, it wraps the requests using a polyfill for ES6 new's promise syntax*/
+const axios = require('axios');
+//calling the inquirer library that prompts the user via q's on command line
+const inquirer = require('inquirer');
+//creates and writes to the file 
+const fs = require('fs');
+//creates and writes to the file 
+const cmlr = require('./commandLineReader.js');
+
+
 // Make a request for a user with a given ID
 axios.get('https://api.github.com/users/stevensJones')
+  //all fu 
   .then(function (response) {
     // If successful then print to the console the data, avatar_url, 
     console.log(response.data);
     console.log('**********************************************');
     console.log(response.data.avatar_url);
     //create a file that is a dot mark down file
+    //TODO: mark down language formatting
     fs.writeFileSync("readme.md", `${response.data} \n ${response.data.avatar_url}`);
   })
   .catch(function (error) {
@@ -67,12 +35,11 @@ inquirer
     if (error.isTtyError) {
       // Prompt couldn't be rendered in the current environment
     } else {
-      // Something else when wrong
+      // Something else went wrong
     }
   })
 
-
-
+cmlr.askUser();
 
 
 
@@ -86,7 +53,7 @@ inquirer
       name: "GitHubQ",
       message: "Please input your GITHUB username"
   }
-]).then(answers => {//.then function with 
+]).then(answers => {//.then function with
   console.log(answers)
 })
 
