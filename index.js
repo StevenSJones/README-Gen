@@ -1,45 +1,28 @@
-/*Call to the axios library provides a single API for dealing with XMLHttpRequest s and node's http interface. 
-Besides that, it wraps the requests using a polyfill for ES6 new's promise syntax*/
-const axios = require('axios');
-//calling the inquirer library that prompts the user via q's on command line
-const inquirer = require('inquirer');
-//creates and writes to the file 
-const fs = require('fs');
 //creates and writes to the file 
 const cmlr = require('./commandLineReader.js');
-
-
-// Make a request for a user with a given ID
-axios.get('https://api.github.com/users/stevensJones')
-  //all fu 
-  .then(function (response) {
-    // If successful then print to the console the data, avatar_url, 
-    console.log(response.data);
-    console.log('**********************************************');
-    console.log(response.data.avatar_url);
-    //create a file that is a dot mark down file
-    //TODO: mark down language formatting
-    fs.writeFileSync("readme.md", `${response.data} \n ${response.data.avatar_url}`);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-// Inquirer 
-inquirer
-  .prompt(questions)
-  .then(answers => {
-    // Use user feedback for... whatever!!
-  })
-  .catch(error => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
-  })
-
+//runs the ask user function
 cmlr.askUser();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
