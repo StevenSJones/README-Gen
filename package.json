@@ -4,7 +4,7 @@
   "description": "This is a README generator that dynamically creates a readme based on user input.  # Unit 09 Node.js and ES6+ Homework: Good README Generator",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "inquirer": "^7.1.0"
   },
   "devDependencies": {},
